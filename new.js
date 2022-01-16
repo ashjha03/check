@@ -90,14 +90,12 @@ fetch('anime.json')
         <div><h1>${ele.title}</h1></div>
         <div><a href="${ele.batch_d}">Link D</a></div>
         <div><a href="${ele.batch_i}">Link L</a></div>
-        </div>`;
+        </div>`;document.getElementById("container").innerHTML=output;
 
         ele.episo.map(function(lik, i){
             list += `<div><ul><li><a href="${lik}">Episode${i++}</a></li></ul></div>`;
+          document.getElementById("container").append(lik);
         })
     })
 })
 .catch(err => console.log(err));
-
-document.getElementById("container").innerHTML=output;
-document.getElementById("container").append(lik);
